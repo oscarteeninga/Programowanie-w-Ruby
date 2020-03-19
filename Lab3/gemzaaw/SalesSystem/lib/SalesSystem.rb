@@ -1,0 +1,5 @@
+require "SalesSystem/version"
+require "SalesSystem/Clients"
+require "SalesSystem/Categories"
+require "SalesSystem/Products"
+require "SalesSystem/crud"

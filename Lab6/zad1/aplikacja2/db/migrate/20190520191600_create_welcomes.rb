@@ -1,0 +1,7 @@
+class CreateWelcomes < ActiveRecord::Migration[5.2]
+  def change
+    create_table :welcomes do |t|
+      t.string :message
+    end
+  end
+end

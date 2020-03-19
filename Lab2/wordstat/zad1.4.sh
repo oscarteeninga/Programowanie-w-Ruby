@@ -1,0 +1,2 @@
+#!/bin/bash
+ruby -ne 'BEGIN { array = Array.new(32, 0) }; array[$_.length-1] += 1; END { array.collect! { |x| array.find_index(x).to_s + "\t" + x.to_s }; array.delete_if { |x| x.include?("\t0")}; print "Size:\tCount:\n"; puts array }' < wordstat-1.6.txt

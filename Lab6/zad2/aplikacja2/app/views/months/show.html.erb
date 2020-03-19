@@ -1,0 +1,35 @@
+<h1>
+<%= @month.name %>
+<%= @year %>
+</h1>
+
+<table>
+
+<tr>
+<% i = 0 %>
+<% while i < 7 %>
+    <td><%= @wdays[i] %></td>
+    <% i += 1 %>
+<% end %>
+</tr>
+
+<tr>
+<% i = 0 %>
+<% while i < @first %>
+    <td><%= %></td>
+    <% i += 1 %>
+<% end %>
+<% if i == 6
+        i = 0
+   end %>
+
+<% day = 1 %>
+<% while day < @days.length %>
+    <td><%= day %></td>
+    <% if @days.find_by(nr:day).wday == 6 %>
+        </tr><tr>
+    <% end %>
+    <% day += 1 %>
+<% end %>
+</tr>
+</table>

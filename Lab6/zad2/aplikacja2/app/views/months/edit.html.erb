@@ -1,0 +1,6 @@
+ <h1>Edycja roku</h1>
+ <%= MonthsController.year %>
+ <%= form_with(model: @h_month, url: month_path(:year), method: :put, local: true) do |form| %>
+    <%= form.text_field "year" %>
+    <%= form.submit "Save" %>
+<% end %>

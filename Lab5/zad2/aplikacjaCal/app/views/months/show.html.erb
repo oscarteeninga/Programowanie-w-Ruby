@@ -1,0 +1,30 @@
+<% require 'date' %>
+<% id = params[:id].to_i %>
+<h1><%= @months[id] %> <%= @year %></h1>
+<table>
+<tr>
+<% for d in @wdays %>
+    <td><%= d %></td>
+<% end %>
+</tr>
+<tr>
+<%
+j = 0
+while !wdays[j+1].include?(1) %>
+    <td></td> <%
+    j += 1
+    if j == 6
+        break
+    end
+end
+day = 1
+while day < i.to_i %>
+    <td><%= day %></td> <%
+    j += 1
+    if j == 7 %>
+        </tr><tr> <%
+        j = 0
+    end
+    day += 1
+end
+%>

@@ -1,0 +1,9 @@
+<h1><%= @year %></h1>
+<h2><%= link_to('Edycja roku', edit_month_path(:year)) %></h2>
+<ul>
+<% i = 0 %>
+<% while i < @months.length %>
+    <% link_to "months", months_path(@i) %>
+    <li><a href="/months/<%= i %>"><b><%= @months[i] %></li></a></b></li>
+    <% i += 1 %>
+<% end %>

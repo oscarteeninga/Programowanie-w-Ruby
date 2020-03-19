@@ -1,0 +1,24 @@
+require "rake"
+require "rspec/core/rake_task"
+require "/Users/oscarteeninga/Dropbox/Informatyka IET/Semestr 4/Ruby/Lab3/objective.rb"
+
+RSpec::Core::RakeTask.new(:test) do |t|
+    t.pattern = Dir.glob("test.rb")
+    t.rspec_opts = "--format documentation"
+end
+
+task :doc do
+    sh 'yardoc *.rb'
+end
+
+task :default => :test do
+    Odbiorca.komunikat
+    Odbiorca.send(:komunikat) # Nawiasy są opcjonalne
+    odbiorca = Odbiorca.new([4,5,6])
+    odbiorca.komunikat
+    odbiorca.utworz_tablice(10, 10)
+    odbiorca.komunikat
+    odbiorca.utworz_tablice!(10, 10)
+    odbiorca.komunikat
+    puts "Parzyste", odbiorca.ilosc_liczb_parzystych
+end

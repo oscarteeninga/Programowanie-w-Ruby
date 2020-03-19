@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nr: 1
+  wday: 
+
+two:
+  nr: 1
+  wday: 

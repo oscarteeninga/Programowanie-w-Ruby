@@ -1,0 +1,21 @@
+<% if !@year_valid.valid? %>
+    <% @year_valid.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+    <% @year_valid.errors.clear %>
+<% else %>
+    <h1>
+    <%= @year.year %>
+    </h1>
+
+    <h2><%= link_to('Edycja roku', edit_month_path(@year.year)) %></h2>
+    <ul>
+    <% i = 1 %>
+
+    <% while i < @year.months.length+1  %>
+        <% month_name = @year.months.find_by(nr:i).name %>
+        <% link_to "months", months_path(@i) %>
+        <li><a href="/months/<%= i %>"><b><%= month_name %></li></a></b></li>
+        <% i += 1 %>
+    <% end %>
+<% end %>
